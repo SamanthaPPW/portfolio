@@ -1,0 +1,25 @@
+<head><link rel="stylesheet" href="styles/ecoindex.css"></head>
+<!-- Le bouton flottant à droite -->
+<div id="ecoindex_toggle_button">A</div>
+
+<!-- La sidebar cachée à droite -->
+<div class="ecoindex" id="ecoindex_sidebar">
+  <h1> Indice EcoIndex du site </h1>
+  <div id="ecoindex_notes">
+    <p id="ecoindex_lettre"> A </p>
+    <p id="ecoindex_score">86/100</p>
+  </div>
+  <p>À des fins de comparaison, la moyenne est entre 50 et 65.</p>
+  <h2> Qu'est-ce que l'éco-index ?</h2>
+  <p>L'éco-index est un outil qui permet d'évaluer l'impact environnemental d'un site web. Il prend en compte plusieurs critères tels que la taille des pages, le poids des images, le nombre de requêtes HTTP, etc.</p>
+  <h2>Le saviez-vous ?</h2>
+  <p>Un site internet est très énergivore ! Il est hébergé sur un serveur consommant de l'eau et relâchant du CO2 !</p>
+  <p>Le site est optimisé donc pour le développement durable et respecte les normes d'éco-conception.</p>
+  <p>Pour plus d'informations, vous pouvez consulter le rapport détaillé sur <a href="https://www.ecoindex.fr">EcoIndex</a>.</p>
+  <p class="credits">L'éco-index est un outil développé par GreenIT.</p>
+  <p class="credits"><strong>Date du test :</strong> 30 Avril 2025</p>
+</div>
+
+<script>
+const toggleBtn=document.getElementById('ecoindex_toggle_button'),sidebar=document.getElementById('ecoindex_sidebar');toggleBtn.addEventListener('click',()=>{sidebar.classList.toggle('active');toggleBtn.classList.toggle('moved')})
+</script>
