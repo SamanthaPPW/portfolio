@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<?php
+  session_start();
+  include 'ecoindex.html';
+?>
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
