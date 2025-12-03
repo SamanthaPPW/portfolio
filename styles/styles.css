@@ -7,19 +7,18 @@ Global
 * {
   margin: 0;
   padding: 0;
- 
+  box-sizing: border-box;
 }
 
 body {
   background-color: #F5E8D9;
   font-family: 'Lora', serif;
-
+  line-height: 1.6;
 }
 
-p,
-a {
+p, a {
   font-size: 18px;
-
+  color: #4B3621;
 }
 
 .sep {
@@ -47,7 +46,6 @@ Header
   z-index: 60;
   background-color: #e1d0bc;
   backdrop-filter: blur(4px);
-  
 }
 
 #main-nav.visible {
@@ -58,19 +56,14 @@ Header
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-direction: row;
   padding: 14px 20px;
+  flex-wrap: wrap; /* permet au menu de passer à la ligne si besoin */
 }
 
 #main-nav ul li a {
   text-decoration: none;
   font-weight: bold;
-   color: #4B3621;
-
-}
-
-#main-nav ul li {
-  list-style-type: none;
+  color: #4B3621;
 }
 
 #main-nav ul li a:hover {
@@ -89,6 +82,7 @@ Header
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover; /* plus sûr pour le responsive */
 }
 
 .hero-buttons {
@@ -100,7 +94,6 @@ Header
   gap: 25px;
   z-index: 50;
   pointer-events: auto;
-  margin-left: 35px;
 }
 
 .hero-btn {
@@ -112,6 +105,7 @@ Header
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 /*
@@ -123,13 +117,13 @@ A propos !
 #aboutme-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  
+  gap: 30px;
+  align-items: center;
 }
 
 #aboutme h1 {
   text-align: center;
-  margin: 40px;
-   color: #4B3621;
+  margin: 40px 20px;
 }
 
 #grid-left {
@@ -138,25 +132,21 @@ A propos !
   align-items: flex-start;
   gap: 15px;
 }
-#grid-left h2{
-  margin : 18px;
-  text-align: center;
-   color: #4B3621;
-}
 
-#cv-thumbnail {
-  display: inline-block;
+#grid-left h2 {
+  margin: 18px;
+  text-align: center;
 }
 
 #cv-thumbnail img {
-  width: 480px;
-  height: auto;
+  width: 100%;
+  max-width: 480px;
   transform-origin: top left;
   transform: scale(0.3);
   transition: transform 300ms ease-out, box-shadow 300ms ease-out;
 }
 
-#grid-left:hover #cv-thumbnail img   {
+#grid-left:hover #cv-thumbnail img {
   transform: scale(1);
 }
 
@@ -164,34 +154,6 @@ A propos !
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-}
-
-#grid-right p {
-  line-height: 1.6;
-  font-size: 18px;
-   color: #4B3621;
-}
-
-#grid-right a{
-  align-self: center;
-  width: 50px;
-  height: auto;
-  margin: 15px auto;
-  transition: transform 0.3s;  
-   color: #4B3621;
-}
-
-#grid-right h2, #grid-right h3{
-   color: #4B3621;
-}
-
-#linkedin-icon{
-  fill: #4B3621;
-}
-
-#linkedin-icon:hover {
-  transform: scale(1.1);
 }
 
 /*
@@ -200,67 +162,23 @@ Projets
 ********************************************************************************************
 */
 
-#projets-container {
-  margin: 50px auto;
-  max-width: 1200px;
-  padding: 0 20px;
-}
-
-#projets-container h1 {
-  text-align: center;
-  margin-bottom: 30px;
-   color: #4B3621;
-}
-
-#projets{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
+#projets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  padding: 20px 40px;
-  margin: 15px auto;
+  padding: 20px 0;
 }
 
 .projet {
   background-color: #F4F0EC;
   border-radius: 8px;
   padding: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
 
-.projet:nth-child(2),
-.projet:nth-child(3),
-.projet:nth-child(2) a,
-.projet:nth-child(3) a,
-.projet:nth-child(2) h3,
-.projet:nth-child(3) h3 {
-  background-color: #4B3621;
-  color: #F5E8D9;
-}
-
-
-
-.projet h3 {
-  margin-bottom: 20px;
-   color: #4B3621;
-}
-.projet nav ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.projet nav ul li {
-  margin-bottom: 10px;
-}
-.projet nav ul li a {
-  text-decoration: none;
-  transition: all 0.3s;
-   color: #4B3621;
-}
-
-.projet nav ul li a:hover {
-  color: #8D6A48;
-  font-size: 1.2rem;
-  text-decoration: underline;
+.projet:hover {
+  transform: translateY(-5px);
 }
 
 /*
@@ -269,49 +187,22 @@ Compétences
 ********************************************************************************************
 */
 
-#competences-container {
-  margin: 50px auto;
-  padding: 0 20px;
-}
-#competences-container h2 {
-  text-align: center;
-  margin-bottom: 30px;
-   color: #4B3621;
-}
-
 #competences {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-  padding: 20px 40px;
-  margin: 15px auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+  justify-items: center;
 }
-
 
 .competence {
   background-color: #F4F0EC;
   border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
-  width: 75%;
-   color: #4B3621;
-}
-
-#competences .competence:nth-of-type(2),
-#competences .competence:nth-of-type(4) {
-  background-color: #4B3621;
-  color: #F5E8D9;
-}
-
-
-.competence h3 {
-  margin-bottom: 15px;
-}
-.competence p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
 }
 
 /*
@@ -319,41 +210,36 @@ Compétences
 Contact Form
 ********************************************************************************************
 */
-#contact{
-  margin: 50px auto;
-  padding: 0 20px;
+
+#contact {
   max-width: 600px;
+  margin: 50px auto;
+  padding: 40px 20px;
   background-color: #F4F0EC;
   border-radius: 8px;
-  padding: 40px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-}
-#contact h2 {
-  text-align: center;
-  margin-bottom: 30px;
-   color: #4B3621;
-}
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
-
 }
-input,
-textarea {
+
+input, textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   font-family: 'Lora', serif;
 }
-input:focus,
-textarea:focus {
+
+input:focus, textarea:focus {
   outline: none;
   border-color: #4B3621;
-  box-shadow: 0 0 5px rgba(75, 54, 33, 0.5);
+  box-shadow: 0 0 5px rgba(75,54,33,0.5);
 }
+
 button {
   background-color: #4B3621;
   color: #F5E8D9;
@@ -363,13 +249,9 @@ button {
   font-weight: 700;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #8D6A48;
-}
-.success-message {
-  color: green;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 /*
@@ -377,12 +259,255 @@ button:hover {
 Footer
 *********************************************************************************************
 */
+
 footer {
   text-align: center;
   padding: 20px;
   background-color: #e1d0bc;
-  color: #4B3621;
   margin-top: 50px;
   font-weight: bold;
-  
 }
+
+/* ***************************************
+   Responsive
+**************************************** */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  #aboutme-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #grid-left h2,
+  #grid-right h2 {
+    font-size: 1.5rem;
+  }
+
+  #cv-thumbnail img {
+    transform: scale(0.5);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-btn {
+    font-size: 16px;
+    padding: 10px 14px;
+  }
+
+  #projets {
+    gap: 20px;
+  }
+
+  .projet {
+    padding: 25px;
+  }
+
+  #competences {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .competence {
+    padding: 20px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  #main-nav ul {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #aboutme-container {
+    gap: 15px;
+  }
+
+  #grid-left h2,
+  #grid-right h2 {
+    font-size: 1.3rem;
+  }
+
+  #cv-thumbnail img {
+    transform: scale(0.7);
+  }
+
+  .hero-buttons {
+    top: 55%;
+  }
+
+  .hero-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  #projets {
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .projet {
+    padding: 20px;
+  }
+
+  #competences {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .competence {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  #contact {
+    padding: 30px 15px;
+  }
+
+  footer {
+    padding: 15px 10px;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  p, a {
+    font-size: 16px;
+  }
+
+  #hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  #aboutme h1,
+  #projets-container h1,
+  #competences-container h2,
+  #contact h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/*Ajoute dans ton HTML, juste avant <nav id="main-nav">, un bouton hamburger :
+
+<button id="hamburger" aria-label="Menu" aria-expanded="false">
+  &#9776;
+</button>
+
+
+Ensuite, dans ton CSS :
+
+/* Hamburger button */
+#hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 100;
+  background-color: #4B3621;
+  color: #F5E8D9;
+  border: none;
+  font-size: 28px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Mobile/Tablette */
+@media (max-width: 1024px) {
+  #hero-buttons {
+    display: none; /* on cache les boutons hero */
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  /* Nav qui se déplie */
+  #main-nav ul {
+    flex-direction: column;
+    display: none; /* caché par défaut */
+    background-color: #4B3621;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  #main-nav ul.show {
+    display: flex;
+  }
+
+  #main-nav ul li a {
+    color: #F5E8D9;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  #main-nav ul li a:hover {
+    color: #e1d0bc;
+  }
+}
+
+
+Et dans ton JS, ajoute juste pour gérer l’ouverture du menu hamburger :
+
+const hamburger = document.getElementById('hamburger');
+const navList = document.querySelector('#main-nav ul');
+
+if (hamburger && navList) {
+  hamburger.addEventListener('click', () => {
+    navList.classList.toggle('show');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', !expanded);
+  });
+}
+
+2️⃣ Supprimer le hover du CV en responsive
+@media (max-width: 1024px) {
+  #grid-left:hover #cv-thumbnail img {
+    transform: scale(0.7); /* taille normale pour responsive */
+  }
+}
+
+3️⃣ Polices et textes presque tous foncés
+
+Ajoute dans ton CSS global / responsive :
+
+body, p, a, h1, h2, h3, h4, h5, h6, label {
+  color: #4B3621; /* foncé pour tout */
+}
+
+4️⃣ LinkedIn trop grand
+#linkedin-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+✅ Résultat attendu :
+
+Les boutons hero disparaissent sur mobile/tablette.
+
+Menu hamburger couleur foncée, qui ouvre la nav quand on clique.
+
+Le CV et les images gardent leur taille normale sur petits écrans.
+
+Texte uniformément foncé.
+
+Logo LinkedIn réduit et proportionné.
+
+Si tu veux, je peux te faire une version finale du CSS complet avec responsive + hamburger + texte foncé + suppression hover CV, prête à copier-coller.
+
+Veux‑tu que je fasse ça ?*/

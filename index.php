@@ -1,6 +1,5 @@
 ﻿<?php
   session_start();
-  include 'ecoindex.html';
 ?>
 
 <!DOCTYPE html>
@@ -10,28 +9,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samantha Pacheco-Pires Wiss - Portfolio</title>
   <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
-  <header id="accueil">
+<header id="accueil">
     <nav id="main-nav">
       <ul>
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#aboutme">À propos de moi</a></li>
-        <li><a href="#projets">Projets</a></li>
+        <li><a href="#projets-container">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#">Portfolio vidéaste</a></li>
       </ul>
     </nav>
-
+  
     <div class="hero">
       <img src="assets/bg-img.png" alt="Image de fond" id="bg-image">
       <div id="hero-buttons" class="hero-buttons" aria-hidden="false">
         <a href="#aboutme" class="hero-btn">À propos de moi</a>
-        <a href="#projets" class="hero-btn">Projets</a>
+        <a href="#projets-container" class="hero-btn">Projets</a>
         <a href="#contact" class="hero-btn">Contact</a>
         <a href="#" class="hero-btn">Portfolio vidéaste</a>
       </div>
     </div>
+    <?php include 'ecoindex.html'; ?>
+
   </header>
 
 <main>
@@ -60,10 +62,10 @@
 
   <h3>Mes expériences</h3>
   <p>
-    J'ai également travaillé sur de petites applications et jeux vidéos, ce qui m'a permis d'améliorer mes compétences en Python, Godot4 et JavaScript.
+    J'ai également travaillé sur de courtes applications et jeux vidéos, ce qui m'a permis d'améliorer mes compétences en Python, Godot4 et JavaScript.
   </p>
   <p>
-    Je suis entrain d'apprendre Symfony grâce à la création d'une applis d'emplois du temps ultra-personnalisable et je me forme aussi en ReactJS Native pour le développement mobile.
+    Je suis entrain d'apprendre Symfony grâce à la création d'une appli d'emplois du temps ultra-personnalisable et je me forme aussi en ReactJS Native pour le développement mobile.
   </p>
   <p>
     Je pars étudier à Montréal, Canada, de janvier 2026 à juin 2026 afin de développer ma culture hors Europe, ainsi que d'y effectuer un stage de 4 semaines dans une agence sur place.
@@ -153,35 +155,35 @@
     </div>
   </section>
   <section id="contact">
-  <?php
-    if (isset($_SESSION['error'])) {
-      echo '<p class="error">' . $_SESSION['error'] . '</p>';
-      unset($_SESSION['error']);
-    }
-    if (isset($_SESSION['success'])) {
-      echo '<p class="success">' . $_SESSION['success'] . '</p>';
-      unset($_SESSION['success']);
-    }
-    ?>
-    <h2>Vous souhaitez me contacter ?</h2>
+  <?php 
+if (isset($_SESSION['error'])) { 
+    echo '<p class="error">' . $_SESSION['error'] . '</p>';
+    unset($_SESSION['error']); 
+}
+if (isset($_SESSION['success'])) {
+    echo '<p class="success">' . $_SESSION['success'] . '</p>';
+    unset($_SESSION['success']); 
+}
+?>
+    <h2>Contactez-moi</h2>
     <form method="POST" action="traitement_formulaire.php">
       <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="name" required placeholder="Votre nom...">
-  
+      <input type="text" id="nom" name="name" required>
+
       <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required placeholder="Votre email...">
-  
+      <input type="email" id="email" name="email" required>
+
       <label for="message">Message :</label>
-      <textarea id="message" name="message" required placeholder="Votre message..."></textarea>
-  
+      <textarea id="message" name="message" required></textarea>
+
       <button type="submit" class="btn" id="envoie">Envoyer</button>
     </form>
   </section>
-</main>
-<footer>
-    &copy; 2025 Samantha Pacheco-Pires Wiss - Tous droits réservés
-</footer>
 
-<script src="scripts/main.js"></script>
+  <footer>
+    &copy; 2025 Samantha Pacheco-Pires Wiss - Tous droits réservés
+  </footer>
+</main>
+
 </body>
 </html>
