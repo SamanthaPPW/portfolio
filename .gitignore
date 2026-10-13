@@ -1,1 +1,3 @@
-traitement_formulaire.php
+includes/config.local.php
+vendor/
+.vscode/

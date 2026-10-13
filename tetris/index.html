@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tetris · Samantha PPW</title>
+    <meta name="description" content="Tetris en JavaScript natif, sans bibliothèque, par Samantha PPW." />
+    <meta name="theme-color" content="#06061a" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306061a'/%3E%3Cpath d='M6 18h6v6H6zM13 18h6v6h-6zM20 18h6v6h-6zM13 11h6v6h-6z' fill='%23ff006e'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script2.js" defer></script>
+</head>
+<body>
+    <header class="bar">
+        <a href="../index.php#projets" class="back" data-i18n="back">← Portfolio</a>
+        <h1>Tetris</h1>
+    </header>
+
+    <main class="game">
+        <div class="board-wrap">
+            <canvas id="board" width="300" height="600" role="img" aria-label="Plateau de Tetris"></canvas>
+            <div class="overlay" id="overlay">
+                <p class="overlay-title" id="overlayTitle">Tetris</p>
+                <p class="overlay-text" id="overlayText" data-i18n="start">Entrée ou bouton pour jouer</p>
+                <button type="button" class="btn" id="startBtn" data-i18n="play">Jouer</button>
+            </div>
+        </div>
+
+        <aside class="side">
+            <section class="panel">
+                <h2 data-i18n="next">Suivante</h2>
+                <canvas id="next" width="96" height="96" aria-hidden="true"></canvas>
+            </section>
+            <dl class="panel stats">
+                <div><dt>Score</dt><dd id="score">0</dd></div>
+                <div><dt data-i18n="lines">Lignes</dt><dd id="lines">0</dd></div>
+                <div><dt data-i18n="level">Niveau</dt><dd id="level">1</dd></div>
+                <div><dt data-i18n="best">Record</dt><dd id="best">0</dd></div>
+            </dl>
+            <section class="panel keys">
+                <h2 data-i18n="controls">Commandes</h2>
+                <ul>
+                    <li><kbd>←</kbd> <kbd>→</kbd> <span data-i18n="k.move">déplacer</span></li>
+                    <li><kbd>↑</kbd> <span data-i18n="k.rotate">tourner</span></li>
+                    <li><kbd>↓</kbd> <span data-i18n="k.soft">descendre</span></li>
+                    <li><kbd>Espace</kbd> <span data-i18n="k.drop">lâcher</span></li>
+                    <li><kbd>P</kbd> <span data-i18n="k.pause">pause</span></li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Commandes tactiles (affichées seulement sur écran tactile) -->
+    <div class="pad" aria-label="Commandes tactiles">
+        <button type="button" data-act="left" aria-label="Gauche">←</button>
+        <button type="button" data-act="rotate" aria-label="Tourner">↻</button>
+        <button type="button" data-act="right" aria-label="Droite">→</button>
+        <button type="button" data-act="down" aria-label="Descendre">↓</button>
+        <button type="button" data-act="drop" aria-label="Lâcher">⤓</button>
+        <button type="button" data-act="pause" aria-label="Pause">❚❚</button>
+    </div>
+</body>
+</html>
