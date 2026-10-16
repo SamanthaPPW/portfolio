@@ -1,3 +1,5 @@
 includes/config.local.php
 vendor/
 .vscode/
+
+portfolio/
