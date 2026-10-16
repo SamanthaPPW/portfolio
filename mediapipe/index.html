@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mediapipe Dance Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p id="consigne">Chargement du modèle...</p>
+  
+  <div id="menu" style="display: none;">
+    <h2>Choisis ton mode de jeu</h2>
+    <button id="btn-assis">🪑 Assis (Haut du corps)</button>
+    <button id="btn-debout">🧍 Debout (Corps entier)</button>
+  </div>
+  <div id="scene">
+    <video id="webcam" autoplay playsinline muted></video>
+    <canvas id="overlay"></canvas>
+    <canvas id="piste" width="500" height="140"></canvas>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

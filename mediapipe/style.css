@@ -1,0 +1,73 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 16px;
+}
+
+#consigne {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#scene {
+  position: relative;
+  display: inline-block;
+}
+
+/* vidéo et squelette du joueur en miroir */
+#webcam {
+  display: block;
+  max-width: 100%;
+  transform: scaleX(-1);
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(-1);
+}
+
+/* piste des poses : PAS en miroir */
+#piste {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+#menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#menu button {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  color: white;
+  transition: transform 0.1s;
+}
+
+#menu button:active {
+  transform: scale(0.95);
+}
