@@ -87,6 +87,11 @@ return [
     'tet.role'      => 'Projet personnel.',
     'tet.challenge' => 'Apprendre un langage en construisant quelque chose qui doit marcher : collisions, rotations, boucle de jeu.',
 
+    'mp.title'     => 'Mediapipe Dance Game',
+    'mp.desc'      => 'Jeu de danse dans le navigateur : la webcam suit le corps du joueur, qui doit reproduire une chorégraphie de 20 poses. Deux modes, assis (haut du corps) ou debout (corps entier). L’analyse de la caméra se fait dans le navigateur.',
+    'mp.role'      => 'Conception et développement : détection de pose, calcul des angles du corps, chorégraphie et score.',
+    'mp.challenge' => 'Valider une pose malgré la caméra : j’ai comparé les angles des articulations plutôt que leurs positions, avec 25° de tolérance, pour que le jeu marche quelle que soit la taille du joueur ou sa distance à l’écran.',
+
     // Stack
     'stack.title'  => 'Stack',
     'stack.intro'  => 'Rangée comme une architecture : du navigateur jusqu’au serveur.',

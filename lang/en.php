@@ -87,6 +87,11 @@ return [
     'tet.role'      => 'Personal project.',
     'tet.challenge' => 'Learning a language by building something that has to work: collisions, rotations, game loop.',
 
+    'mp.title'     => 'Mediapipe Dance Game',
+    'mp.desc'      => 'A dance game in the browser: the webcam tracks the player’s body, who has to match a 20-pose choreography. Two modes, seated (upper body) or standing (full body). The camera analysis runs in the browser.',
+    'mp.role'      => 'Design and development: pose detection, body-angle calculation, choreography and scoring.',
+    'mp.challenge' => 'Validating a pose despite camera variation: I compared joint angles rather than positions, with a 25° tolerance, so the game works whatever the player’s size or distance from the screen.',
+
     // Stack
     'stack.title'  => 'Stack',
     'stack.intro'  => 'Laid out like an architecture: from the browser down to the server.',

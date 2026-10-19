@@ -253,6 +253,29 @@ unset($_SESSION['error'], $_SESSION['success']);
             <p class="tech">JavaScript · HTML · CSS</p>
             <a class="go" href="tetris/index.html?lang=<?= $lang ?>"><?= t('link.play') ?></a>
         </article>
+
+        <article class="card project" data-reveal>
+            <svg class="art art-dance" viewBox="0 0 120 170" aria-hidden="true" focusable="false">
+                <circle class="dn-head" cx="60" cy="30" r="12" />
+                <path class="dn-bone" d="M60 44V112M60 112 46 152M60 112 74 152" />
+                <g class="dn-arm dn-l">
+                    <path class="dn-bone" d="M44 58 24 58 6 58" />
+                    <circle class="dn-joint f-m" cx="44" cy="58" r="4" /><circle class="dn-joint f-b" cx="24" cy="58" r="4" /><circle class="dn-joint f-v" cx="6" cy="58" r="4" />
+                </g>
+                <g class="dn-arm dn-r">
+                    <path class="dn-bone" d="M76 58 96 58 114 58" />
+                    <circle class="dn-joint f-m" cx="76" cy="58" r="4" /><circle class="dn-joint f-b" cx="96" cy="58" r="4" /><circle class="dn-joint f-v" cx="114" cy="58" r="4" />
+                </g>
+            </svg>
+            <p class="p-top"><span class="p-num">06</span><span class="badge live"><?= t('status.live') ?></span></p>
+            <h3><?= t('mp.title') ?></h3>
+            <p class="layers" aria-label="<?= t('layers.aria') ?>"><i class="on">front</i><i>back</i><i>ops</i></p>
+            <p><?= t('mp.desc') ?></p>
+            <p class="fact"><b><?= t('label.role') ?></b> <?= t('mp.role') ?></p>
+            <p class="fact"><b><?= t('label.challenge') ?></b> <?= t('mp.challenge') ?></p>
+            <p class="tech">MediaPipe · JavaScript · Canvas · HTML</p>
+            <a class="go" href="mediapipe/index.html"><?= t('link.play') ?></a>
+        </article>
     </div>
 </section>
 

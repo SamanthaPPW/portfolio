@@ -1148,6 +1148,24 @@ h3 {
     98%, 100% { transform: translateY(150px); opacity: 0; }
 }
 
+/* Mediapipe : le squelette détecté enchaîne les poses */
+.dn-head { fill: none; stroke: var(--text); stroke-width: 3; }
+.dn-bone { fill: none; stroke: var(--text); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.dn-arm { transform-origin: 44px 58px; }
+.dn-r { transform-origin: 76px 58px; }
+.dn-l { animation: dn-l 5s var(--ease) infinite; }
+.dn-r { animation: dn-r 5s var(--ease) infinite; }
+@keyframes dn-l {
+    0%, 18% { transform: rotate(0); }
+    30%, 78% { transform: rotate(90deg); }
+    90%, 100% { transform: rotate(0); }
+}
+@keyframes dn-r {
+    0%, 18% { transform: rotate(0); }
+    30%, 52% { transform: rotate(-90deg); }
+    64%, 100% { transform: rotate(0); }
+}
+
 /* Le texte des cartes passe au-dessus de l'illustration */
 .project > :not(.art):not(.go):not(.bug) { position: relative; }
 
@@ -1335,6 +1353,7 @@ html.a11y-calm .bug { display: none; }
 
 @media (min-width: 760px) {
     .projects { grid-template-columns: repeat(2, 1fr); }
+    .project:nth-child(even):last-child { grid-column: 1 / -1; }
     .project:first-child { grid-column: 1 / -1; }
     .project:first-child > p:not([class]),
     .project:first-child .fact { max-width: 52rem; }
